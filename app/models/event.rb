@@ -8,8 +8,8 @@ class Event < ApplicationRecord
 
 	def date_cannot_be_in_past
 		return errors.add(:date, "cannot be empty") if date.nil?
-		
-		unless date > DateTime.now
+
+		unless date >= Date.today
 			errors.add(:date, "cannot be in past")
 		end
 	end
