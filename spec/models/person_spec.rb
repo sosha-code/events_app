@@ -54,8 +54,8 @@ RSpec.describe Person, type: :model do
   end		
 
   describe "#associations" do
-  	let(:person) { Person.create!(name: "john", email: "john@example.com")}
-  	let!(:event) { Event.create!(title: "Boot Camp", 
+  	let(:person) { Person.create(name: "john", email: "john_#{SecureRandom.hex(4)}@example.com")}
+  	let!(:event) { Event.create(title: "Boot Camp", 
   		                         location: "Dallas, tx", 
   		                         date: Date.current + 2, 
   		                         person: person )}
